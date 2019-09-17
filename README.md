@@ -53,6 +53,7 @@ TODO
 -------------
 * Device side security verification
 * Support for SSL/TSL
+* Offline storage, online retransmission
 * Test performance in different operating system environments
 * And much more...
 --------
@@ -63,4 +64,4 @@ In progress
 
 Proposal
 ------------
-We welcome people of insight to develop this project together. Thank you.
+We welcome people of insight to develop this project together， Thank you.
