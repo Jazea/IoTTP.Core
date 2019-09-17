@@ -3,6 +3,16 @@ IoTTP.Core
 
 Internet of things transport protocol (IoTTP) library for edge computing based on MQTT protocol. 
 
+Feature(implemented)
+-----------
+* Executes a remote command and returns the result dynamically
+* Client decides whether to return an execution result as needed
+* Remote command execution log (process start and stop state)
+* Support multi-session, multi-process concurrent execution, return result session isolation
+* Support client specified command execution duration (expiration is automatically cancelled to avoid resource waste)
+* Whether the same command is Multiton executed
+* Support for communicating with child processes via named pipes (passing execution parameters)
+
 Support platform
 -----------
 * Windows
@@ -45,7 +55,7 @@ await client.RequestAsync(requestMessage, (ResponseMessage<string> responseMessa
     {
         //The return contents of the program can be defined on the device side, such as the json string after the object has been serialized, where it can be deserialized.
         var content = responseMessage.Content;
-        Console.WriteLine(content); //
+        Console.WriteLine(content);
     });
 ```
 --------
@@ -64,4 +74,4 @@ In progress
 
 Proposal
 ------------
-We welcome people of insight to develop this project together， Thank you.
+We welcome people of insight to develop this project together, Thanks.
