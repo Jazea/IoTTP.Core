@@ -21,9 +21,9 @@ Support platform
   
 How to use?
 -----------
-Device (broker, executive command)
+**Device** (broker, executive command)
 ```
-var serverUri = new Uri("iottp://rabbitserver:1883"); 
+var serverUri = new Uri("iottp://broker.hivemq.com");
 var userName = "guest";
 var password = "guest";
 
@@ -33,19 +33,19 @@ var broker = new IoTTP.Core.Broker(deviceId);
 await broker.StartAsync(serverUri, userName, password);
 ```
 
-Client (send command)
+**Client** (send command)
 ```
-var serverUri = new Uri("iottp://rabbitserver:1883"); 
+var serverUri = new Uri("iottp://broker.hivemq.com");
 var userName = "guest";
 var password = "guest";
 
-//find all the devices you can control
+//find all the devices you can control(For now only RabbitMQ)
 //var queueApi = $"http://{serverUri.Host}:{15672}/api/queues";
 //var devices = await Discover.FindAsync(new Uri(queueApi), userName, password);
 
 //consistent with device side, Or from the devices found.
 var deviceId = new Guid("97c8bc6e-0709-4b2e-82ef-298f42d91dcc");
-var client = new Client(new Guid(deviceId));
+var client = new Client(deviceId);
 await client.ConnectAsync(serverUri, userName, password);
 
 var commandLine = Console.ReadLine(); //for example: "ping bing.com"
